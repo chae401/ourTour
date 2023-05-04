@@ -31,7 +31,7 @@ public class RecommendController {
 		System.out.println(items);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("items",items);
-		mav.setViewName("main/recommend");
+		mav.setViewName("views/recommend");
 		
 		return mav;
 	}

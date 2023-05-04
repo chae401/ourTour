@@ -12,8 +12,7 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public int insert(UserDTO user) {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.insert(user);
 	}
 
 	@Override
@@ -36,14 +35,13 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public UserDTO login(String id, String pass) {
-		// TODO Auto-generated method stub
 		return dao.login(id, pass);
 	}
 
 	@Override
 	public int update(UserDTO user) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.update(user);
 	}
 
 }

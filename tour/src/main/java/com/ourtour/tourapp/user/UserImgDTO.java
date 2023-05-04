@@ -3,6 +3,7 @@ public class UserImgDTO {
 	private int photoNo;
 	private String userID;
 	private String photoaddr;
+	
 	@Override
 	public String toString() {
 		return "UserImgDTO [photoNo=" + photoNo + ", userID=" + userID + ", photoaddr=" + photoaddr + "]";

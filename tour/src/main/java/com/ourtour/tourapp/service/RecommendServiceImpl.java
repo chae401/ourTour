@@ -66,9 +66,15 @@ public class RecommendServiceImpl implements RecommendService{
         // 1. 문자열 형태의 JSON을 파싱하기 위한 JSONParser 객체 생성
         JSONParser parser = new JSONParser();
         // 2. 문자열을 JSON 형태로 JSONObject 객체에 저장
+        
         JSONObject obj = (JSONObject)parser.parse(sb.toString());
         obj = (JSONObject)obj.get("response");
         obj = (JSONObject)obj.get("body");
+        Long rows = (Long)obj.get("numOfRows");
+        if(rows==0) {
+        	System.out.println("관련 정보가 없습니다.");
+        	return items;
+        }
         obj = (JSONObject)obj.get("items");
         // 3. 필요한 리스트 데이터 부분만 가져와 JSONArray로 저장
         JSONArray array = (JSONArray) obj.get("item");

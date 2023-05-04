@@ -10,6 +10,9 @@ public class UserDTO {
 	private String usertel;     // �쟾�솕踰덊샇
 	private String userimgaddr;    // �쑀���씠誘몄� 二쇱냼
 	
+	public UserDTO() {
+		
+	}
 	
 	public UserDTO(String id, String pass, String name, String birth, String gender, String email, String usertel,
 			String userimgaddr) {
@@ -22,6 +25,16 @@ public class UserDTO {
 		this.email = email;
 		this.usertel = usertel;
 		this.userimgaddr = userimgaddr;
+	}
+	public UserDTO(String id, String name, String birth, String gender, String email, String usertel
+			) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.birth = birth;
+		this.gender = gender;
+		this.email = email;
+		this.usertel = usertel;
 	}
 	@Override
 	public String toString() {

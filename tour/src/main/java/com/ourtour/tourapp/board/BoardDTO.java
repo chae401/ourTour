@@ -1,19 +1,64 @@
 package com.ourtour.tourapp.board;
+import java.util.List;
+import org.springframework.web.multipart.MultipartFile;
 public class BoardDTO {
 	private int boardNo;
+	private String category;
 	private String title;
 	private String userID;
 	private String content;
 	private String writedate;
 	private int view;
 	private int like;
+	private List<MultipartFile> files;
 	
-	@Override
-	public String toString() {
-		return "BoardDTO [boardNo=" + boardNo + ", title=" + title + ", userID=" + userID + ", content=" + content
-				+ ", writedate=" + writedate + ", view=" + view + ", like=" + like + "]";
+	public BoardDTO() {
+		
 	}
 	
+	public BoardDTO(int boardNo, String category, String title, String userID, String content, String writedate,
+			int view, int like) {
+		super();
+		this.boardNo = boardNo;
+		this.category = category;
+		this.title = title;
+		this.userID = userID;
+		this.content = content;
+		this.writedate = writedate;
+		this.view = view;
+		this.like = like;
+	}
+	
+	public BoardDTO(int boardNo, String category, String title, String userID, String content, String writedate,
+			int view, int like, List<MultipartFile> files) {
+		super();
+		this.boardNo = boardNo;
+		this.category = category;
+		this.title = title;
+		this.userID = userID;
+		this.content = content;
+		this.writedate = writedate;
+		this.view = view;
+		this.like = like;
+		this.files = files;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	@Override
+	public String toString() {
+		return "BoardDTO [boardNo=" + boardNo + ", category=" + category + ", title=" + title + ", userID=" + userID
+				+ ", content=" + content + ", writedate=" + writedate + ", view=" + view + ", like=" + like + ", files="
+				+ files + "]";
+	}
+
 	public int getBoardNo() {
 		return boardNo;
 	}
@@ -55,6 +100,14 @@ public class BoardDTO {
 	}
 	public void setLike(int like) {
 		this.like = like;
+	}
+
+	public List<MultipartFile> getFiles() {
+		return files;
+	}
+
+	public void setFiles(List<MultipartFile> files) {
+		this.files = files;
 	}
 	
 }
